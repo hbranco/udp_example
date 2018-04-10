@@ -56,7 +56,8 @@ class parsing():
                 print("falaha do crc")
                 print("crc calculado: " + str(crc))
                 print("CRC recebido: "+ dataCRC)
-                nack = '\x15'
+                # nack = '\x15'
+                nack = "Mensagem recebida! CRC Invalido"
                 sock.sendto(nack.upper().encode('UTF-8'), cliente)
                 self.sock.sendto(nack.upper().encode('UTF-8'), ip)
                 # con.sendall(nack.upper().encode('UTF-8'))
@@ -65,7 +66,8 @@ class parsing():
                 _thread.exit_thread()
             else:
               #  print("crc deu certo")
-                ack = '\x06'
+              #   ack = '\x06'
+                ack = "Mensagem recebida! CRC VALIDO"
                 self.sock.sendto(ack.upper().encode('UTF-8'), cliente)
                 dadosParser = dataNoCRC.split()
                 print(dadosParser)
