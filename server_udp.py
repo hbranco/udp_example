@@ -7,6 +7,9 @@ import logging
 import socket
 import sys
 from crc16branco import calcByte
+'''
+classe que implementa o servidor UDP com mult threads e CRC 
+'''
 
 class parsing():
     def __init__(self):
